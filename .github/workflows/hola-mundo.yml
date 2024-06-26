@@ -1,1 +1,11 @@
+name: hola-mundo 
+on: [push] 
+jobs:
+  hola-mundo: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: CheckoutV3  
+        uses: actions/checkout@v3  
 
+      - name: Correr Script 
+        run: bash hola-mundo.sh 
