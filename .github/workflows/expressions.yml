@@ -1,0 +1,26 @@
+name: Trigger Workflow_dispatch
+run-name: Aprendiendo el trigger Workflow_dispatch
+on: Workflow_dispatch
+	inputs:
+		edad:
+		   description: 'Edad'
+		   required: true
+		   typer: integer
+		nombre:
+		   description: 'Nombre'
+		   required: true
+		   default: 'Allison'
+		   typer: string
+jobs:
+	mayor:
+		if: ${{ input.edad >= 18 }}
+		runs-on: Ubuntu-lastest
+		steps:
+		   - name: Correr el script
+		   - run: echo Hola, ${{ input.Nombre }}, debido a tu edad presentada, eres mayor de edad 
+	menor:
+		if: ${{ input.edad < 18 }}
+		runs-on: Ubuntu-lastest
+		steps:
+		   - name: Correr script
+		   - run: echo Hola ${{ input.Name }}, debido a tu edad presentada, eres menor de edad
